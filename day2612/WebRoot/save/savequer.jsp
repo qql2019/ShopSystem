@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function selepro(val){
+	document.forms[0].reqfg.value=val;
+	document.forms[0].submit();
+}
+
+</script>
+</head>
+<body>
+<table>
+		<tr>
+			<td>&nbsp;&nbsp;当前位置&gt;&gt;基础信息管理&gt;&gt;库存查询&gt;&gt;</td>
+		</tr>
+	</table>
+	<form action="${pageContext.request.contextPath }/Saveservlet" method="post" target="bottom">
+	<table width="80%">
+	<tr>
+	<td><input type="hidden" name="reqfg" value="finalsavelike"> </td>
+	</tr>
+	<tr>
+	<td>
+	请输入商品：
+<input type="text" name="product">
+<input type="button" value="查询" onclick="selepro('finalsavelike')">&nbsp;&nbsp;&nbsp;
+<input type="button" value="查询所有" onclick="selepro('finalsave')" >
+</td>
+	</tr>
+	</table>
+	
+	</form>
+</body>
+</html>
